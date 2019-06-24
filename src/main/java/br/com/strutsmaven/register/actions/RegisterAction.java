@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import br.com.strutsmaven.model.Product;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,15 +23,44 @@ public class RegisterAction extends ActionSupport {
 	private String address;
 	private String color;
 	private List<String> colors;
+	private String selectedColor;
+	private Boolean subscription;
+	private String hobby;
+	private List<String> hobbies;
+	private List<Product> products;
 	
 	public String execute() {
 		System.out.println("execute() method called");
+		
+		if(subscription == true) {
+			System.out.println("You are a subscriber!");
+		} else {
+			System.out.println("You are not a subscriber!");
+		}
 		return SUCCESS;
 	}
 	
 	public String initializeFormFields() {
 		initializeColors();
+		initializeHobbies();
+		initializeProducts();
 		return INPUT;
+	}
+
+	private void initializeProducts() {
+		products = new ArrayList<>();
+		products.add(new Product(111L, "Mobile Phone", 10000));
+		products.add(new Product(222L, "Camera", 7000));
+		products.add(new Product(333L, "TV", 20000));
+		products.add(new Product(444L, "Laptop", 30000));
+	}
+
+	private void initializeHobbies() {
+		hobbies = new ArrayList<>();
+		hobbies.add("Drawing");
+		hobbies.add("Teaching");
+		hobbies.add("Singing");
+		hobbies.add("Programming");
 	}
 
 	private void initializeColors() {

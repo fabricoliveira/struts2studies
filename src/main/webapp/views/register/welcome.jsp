@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<h1>Welcome</h1>
+	<h2>Welcome</h2>
 	<br>
 	<s:label value="First Name:" />
 	<s:property value="firstName" /><br>
@@ -31,6 +31,12 @@
 	
 	<s:label value="Favourite Color:" />
 	<s:property value="color" /><br>
+
+	<s:label value="Subscribe to our newsletter:" />
+	<s:property value="subscription" /><br>
+	
+	<s:label value="Hobby:" />
+	<s:property value="hobby" /><br>
 
 </body>
 </html>
