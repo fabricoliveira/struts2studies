@@ -1,5 +1,10 @@
 package br.com.strutsmaven.actions;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class TestAction {
 	
 	private String message;
@@ -13,28 +18,4 @@ public class TestAction {
 		return "success";
 	}
 
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	
 }
