@@ -20,6 +20,7 @@
 		<s:textfield name="age" label="Age" errorPosition="bottom" />
 		<s:textfield name="email" label="E-Mail" errorPosition="bottom" />
 		<s:textarea name="address" label="Address" cols="30" rows="7" />
+		<s:select list="colors" name="color" headerKey="null" headerValue="Select a color" label="Favourite Color" />
 		<s:submit value="Register" />
 		<s:reset value="Reset" />
 	</s:form>

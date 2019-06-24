@@ -1,5 +1,8 @@
 package br.com.strutsmaven.register.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import lombok.Getter;
@@ -17,11 +20,25 @@ public class RegisterAction extends ActionSupport {
 	private Integer age;
 	private String email;
 	private String address;
+	private String color;
+	private List<String> colors;
 	
 	public String execute() {
 		System.out.println("execute() method called");
-		
 		return SUCCESS;
+	}
+	
+	public String initializeFormFields() {
+		initializeColors();
+		return INPUT;
+	}
+
+	private void initializeColors() {
+		colors = new ArrayList<>();
+		colors.add("Red");
+		colors.add("Blue");
+		colors.add("Green");
+		colors.add("White");
 	}
 	
 //	public void validate() {

@@ -19,5 +19,8 @@
             <result name="success">/views/register/welcome.jsp</result>
             <result name="input">/views/register/register.jsp</result>
         </action>
+        <action name="formLoadAction" method="initializeFormFields" class="br.com.strutsmaven.register.actions.RegisterAction">
+            <result name="input">/views/register/register.jsp</result>
+        </action>
     </package>
 </struts>
