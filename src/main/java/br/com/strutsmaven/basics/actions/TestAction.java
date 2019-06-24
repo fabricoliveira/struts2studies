@@ -1,4 +1,4 @@
-package br.com.strutsmaven.actions;
+package br.com.strutsmaven.basics.actions;
 
 import lombok.Getter;
 import lombok.Setter;
