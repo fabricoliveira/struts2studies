@@ -17,21 +17,21 @@
 		<param name="fieldName">gender</param>
 		<message>Gender is required</message>
 	</validator>
-	<validator type="required">
-		<param name="fieldName">age</param>
-		<message>Age is required</message>
-	</validator>
-	<validator type="int">
-		<param name="fieldName">age</param>
-		<param name="age">18</param>
-		<message>Age should be above ${min}</message>
-	</validator>
-	<validator type="requiredstring">
-		<param name="fieldName">email</param>
-		<message>E-Mail is required</message>
-	</validator>
-	<validator type="email">
-		<param name="fieldName">email</param>
-		<message>Must provide a valid E-Mail</message>
-	</validator>
+	<field name="age">
+		<field-validator type="required">
+			<message>Age is required</message>
+		</field-validator>
+		<field-validator type="int">
+			<param name="age">18</param>
+			<message>Age should be above ${min}</message>
+		</field-validator>
+	</field>
+	<field name="email">
+		<field-validator type="requiredstring">
+			<message>E-Mail is required</message>
+		</field-validator>
+		<field-validator type="email">
+			<message>Must provide a valid E-Mail</message>
+		</field-validator>
+	</field>
 </validators>
