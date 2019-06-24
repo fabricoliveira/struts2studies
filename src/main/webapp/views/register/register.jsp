@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<s:head/>
 <meta charset="UTF-8">
 <title>Struts 2 with Maven - Register</title>
 </head>
@@ -13,11 +14,11 @@
 	<br>
 	
 	<s:form action="registerAction">
-		<s:textfield name="firstName" label="First name" />
-		<s:textfield name="lastName" label="Last name" />
-		<s:radio name="gender" list="{'Male', 'Female'}" label="Gender" />
-		<s:textfield name="age" label="Age" />
-		<s:textfield name="email" label="E-Mail" />
+		<s:textfield name="firstName" label="First name" errorPosition="bottom" />
+		<s:textfield name="lastName" label="Last name" errorPosition="bottom" />
+		<s:radio name="gender" list="{'Male', 'Female'}" label="Gender" errorPosition="bottom" />
+		<s:textfield name="age" label="Age" errorPosition="bottom" />
+		<s:textfield name="email" label="E-Mail" errorPosition="bottom" />
 		<s:submit value="Register" />
 	</s:form>
 

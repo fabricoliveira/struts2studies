@@ -8,15 +8,16 @@
 
     <package name="test" extends="struts-default">
         <action name="testAction" class="br.com.strutsmaven.basics.actions.TestAction">
-            <result name="index">/views/basics/index.views</result>
-            <result name="success">/views/basics/success.views</result>
-            <result name="error">/views/basics/error.views</result>
+            <result name="index">/views/basics/index.jsp</result>
+            <result name="success">/views/basics/success.jsp</result>
+            <result name="error">/views/basics/error.jsp</result>
         </action>
     </package>
     
     <package name="register" extends="struts-default">
         <action name="registerAction" class="br.com.strutsmaven.register.actions.RegisterAction">
-            <result name="success">/views/register/welcome.views</result>
+            <result name="success">/views/register/welcome.jsp</result>
+            <result name="input">/views/register/register.jsp</result>
         </action>
     </package>
 </struts>
