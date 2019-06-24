@@ -33,7 +33,14 @@
 	<s:property value="color" /><br>
 
 	<s:label value="Subscribe to our newsletter:" />
-	<s:property value="subscription" /><br>
+	
+	<s:if test="%{subscription == true}">
+		<div>You are a subscriber</div>
+	</s:if>
+	<s:else>
+		<div>You are not a subscriber</div>
+	</s:else>
+	<br>
 	
 	<s:label value="Hobby:" />
 	<s:property value="hobby" /><br>
