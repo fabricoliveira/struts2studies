@@ -17,8 +17,8 @@ public class ProductDAO {
 		Connection connection = null;
 		String sql = null;
 		boolean isUpdate = product.getId() != null ? true : false;
-
-		if (isUpdate)
+		
+		if(isUpdate)
 			sql = "UPDATE products SET name=?, price=?, category=? WHERE id=?";
 		else
 			sql = "INSERT INTO products values (?, ?, ?)";
@@ -29,6 +29,9 @@ public class ProductDAO {
 			ps.setString(1, product.getName());
 			ps.setInt(2, product.getPrice());
 			ps.setString(3, product.getCategory());
+			
+			if(isUpdate)
+				ps.setLong(4, product.getId());
 
 			if (isUpdate)
 				ps.setLong(4, product.getId());
