@@ -39,6 +39,10 @@
     		<result name="success" type="redirect">welcomeAction</result>
     		<result name="error">/views/product_management/error.jsp</result>
     	</action>
+    	<action name="deleteProductAction" class="productmanagement.actions.DeleteAction">
+    		<result name="success" type="redirect">welcomeAction</result>
+    		<result name="error">/views/product_management/error.jsp</result>
+    	</action>
     </package>
     
 </struts>
