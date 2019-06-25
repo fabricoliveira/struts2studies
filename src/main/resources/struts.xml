@@ -23,4 +23,11 @@
             <result name="input">/views/register/register.jsp</result>
         </action>
     </package>
+    
+    <package name="productManagementApp" namespace="/" extends="struts-default">
+    	<action name="loginAction" class="br.com.productmanagement.actions.LoginAction">
+    		<result name="success">/views/product_management/welcome.jsp</result>
+    		<result name="input">/views/product_management/login.jsp</result>
+    	</action>
+    </package>
 </struts>

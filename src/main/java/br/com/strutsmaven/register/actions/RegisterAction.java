@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import br.com.strutsmaven.model.Product;
+import br.com.productmanagement.model.Product;
 import lombok.Getter;
 import lombok.Setter;
 
