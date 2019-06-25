@@ -15,7 +15,13 @@ public class ProductDAO {
 
 	public void save(Product product) {
 		Connection connection = null;
-		String sql = "INSERT INTO products values (?, ?, ?)";
+		String sql = null;
+		boolean isUpdate = product.getId() != null ? true : false;
+		
+		if(isUpdate)
+			sql = "UPDATE products SET name=?, price=?, category=? WHERE id=?";
+		else
+			sql = "INSERT INTO products values (?, ?, ?)";
 
 		try {
 			connection = ConnectionFactory.getConnection();
@@ -23,6 +29,9 @@ public class ProductDAO {
 			ps.setString(1, product.getName());
 			ps.setInt(2, product.getPrice());
 			ps.setString(3, product.getCategory());
+			
+			if(isUpdate)
+				ps.setLong(4, product.getId());
 
 			ps.executeUpdate();
 
@@ -37,7 +46,7 @@ public class ProductDAO {
 	public static List<Product> getAllProducts() {
 		List<Product> products = new ArrayList<>();
 		Connection connection = null;
-		String sql = "SELECT * FROM product";
+		String sql = "SELECT * FROM products";
 
 		try {
 			connection = ConnectionFactory.getConnection();
@@ -90,28 +99,8 @@ public class ProductDAO {
 		return product;
 	}
 
-	public void update(Product product) {
-		String sql = "UPDATE product SET name=?, price=? WHERE id=?";
-		Connection connection = null;
-
-		try {
-			connection = ConnectionFactory.getConnection();
-			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setString(1, product.getName());
-			ps.setInt(2, product.getPrice());
-			ps.setLong(3, product.getId());
-
-			ps.executeUpdate();
-
-		} catch (SQLException e) {
-			throw new RuntimeException(e.getMessage(), e);
-		} finally {
-			ConnectionFactory.closeConnection(connection);
-		}
-	}
-
 	public void delete(Long id) throws SQLException {
-		String sql = "DELETE FROM product WHERE id=?";
+		String sql = "DELETE FROM products WHERE id=?";
 		Connection connection = null;
 
 		try {
