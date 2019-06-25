@@ -32,13 +32,25 @@
     		<result name="success" type="redirect">welcomeAction</result>
     		<result name="input">/views/product_management/login.jsp</result>
     	</action>
+    	
     	<action name="welcomeAction" class="productmanagement.actions.WelcomeAction">
     		<result name="success">/views/product_management/welcome.jsp</result>
     	</action>
+    	
     	<action name="addAction" class="productmanagement.actions.AddAction">
     		<result name="success" type="redirect">welcomeAction</result>
     		<result name="error">/views/product_management/error.jsp</result>
     	</action>
+    	
+    	<action name="updateProductAction" class="productmanagement.actions.UpdateAction" method="loadProduct">
+    		<result name="success" type="redirect">updateLoadedProductAction</result>
+    		<result name="error">/views/product_management/error.jsp</result>
+    	</action>
+    	<action name="updateLoadedProductAction" class="productmanagement.actions.UpdateAction">
+    		<result name="success" type="redirect">welcomeAction</result>
+    		<result name="error">/views/product_management/error.jsp</result>
+    	</action>
+    	
     	<action name="deleteProductAction" class="productmanagement.actions.DeleteAction">
     		<result name="success" type="redirect">welcomeAction</result>
     		<result name="error">/views/product_management/error.jsp</result>
