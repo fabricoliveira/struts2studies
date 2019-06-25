@@ -1,7 +1,5 @@
 package productmanagement.actions;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import com.opensymphony.xwork2.Action;
@@ -13,20 +11,21 @@ import productmanagement.model.Product;
 
 @Getter
 @Setter
-public class WelcomeAction implements Action {
+public class AddAction implements Action {
 	
-	private List<Product> products;
+	private String name;
+	private Integer price;
+	private String category;
 	
 	@Inject
 	private ProductDAOI productDAO;
 	
-	private void initializeProducts() {
-		products = productDAO.getAllProducts();
-	}
-	
 	public String execute() {
-		initializeProducts();
+		
+		Product product = new Product(null, name, price, category);
+		productDAO.save(product);
+		
 		return SUCCESS;
-	}
+	} 
 
 }

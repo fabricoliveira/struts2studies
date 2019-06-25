@@ -5,6 +5,9 @@
 
 <struts>
     <constant name="struts.devMode" value="true" />
+    
+    <!-- 	Responsável por remover o sufixo .action das url do sistema -->
+	<constant name="struts.action.extension" value="," />
 
     <package name="test" extends="struts-default">
         <action name="testAction" class="strutsmaven.basics.actions.TestAction">
@@ -32,5 +35,10 @@
     	<action name="welcomeAction" class="productmanagement.actions.WelcomeAction">
     		<result name="success">/views/product_management/welcome.jsp</result>
     	</action>
+    	<action name="addAction" class="productmanagement.actions.AddAction">
+    		<result name="success" type="redirect">welcomeAction</result>
+    		<result name="error">/views/product_management/error.jsp</result>
+    	</action>
     </package>
+    
 </struts>

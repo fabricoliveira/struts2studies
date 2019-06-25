@@ -8,10 +8,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
 import productmanagement.model.Product;
 import productmanagement.utils.ConnectionFactory;
 
-public class ProductDAO {
+@Named
+@RequestScoped
+public class ProductDAO implements ProductDAOI {
 
 	public void save(Product product) {
 		Connection connection = null;
@@ -21,7 +26,7 @@ public class ProductDAO {
 		if(isUpdate)
 			sql = "UPDATE products SET name=?, price=?, category=? WHERE id=?";
 		else
-			sql = "INSERT INTO products values (?, ?, ?)";
+			sql = "INSERT INTO products (name, price, category) values (?, ?, ?)";
 
 		try {
 			connection = ConnectionFactory.getConnection();
@@ -31,9 +36,6 @@ public class ProductDAO {
 			ps.setString(3, product.getCategory());
 			
 			if(isUpdate)
-				ps.setLong(4, product.getId());
-
-			if (isUpdate)
 				ps.setLong(4, product.getId());
 
 			ps.executeUpdate();
@@ -46,7 +48,7 @@ public class ProductDAO {
 
 	}
 
-	public static List<Product> getAllProducts() {
+	public List<Product> getAllProducts() {
 		List<Product> products = new ArrayList<>();
 		Connection connection = null;
 		String sql = "SELECT * FROM products";
@@ -91,6 +93,7 @@ public class ProductDAO {
 				product.setId(rs.getLong("id"));
 				product.setName(rs.getString("name"));
 				product.setPrice(rs.getInt("price"));
+				product.setCategory(rs.getString("category"));
 			}
 
 		} catch (SQLException e) {
@@ -102,7 +105,7 @@ public class ProductDAO {
 		return product;
 	}
 
-	public void delete(Long id) throws SQLException {
+	public void delete(Long id) {
 		String sql = "DELETE FROM products WHERE id=?";
 		Connection connection = null;
 

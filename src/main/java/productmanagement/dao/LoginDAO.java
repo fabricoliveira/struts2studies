@@ -5,12 +5,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
 import productmanagement.model.Login;
 import productmanagement.utils.ConnectionFactory;
 
-public class LoginDAO {
+@Named
+@RequestScoped
+public class LoginDAO implements LoginDAOI {
 	
-	public static boolean isValidUser(Login login) {
+	public boolean isValidUser(Login login) {
 		Connection connection = null;
 		boolean validStatus = false;
 		try {
