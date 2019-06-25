@@ -15,7 +15,7 @@
 		
 		<s:form action="loginAction">
 			<s:textfield name="username" label="Username" errorPosition="bottom" />
-			<s:textfield name="password" label="Password" errorPosition="bottom" />
+			<s:textfield name="password" label="Password" type="password" errorPosition="bottom" />
 			<s:submit value="Login" />
 			<s:reset value="Reset" />
 		</s:form>

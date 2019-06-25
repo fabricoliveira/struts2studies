@@ -1,11 +1,11 @@
-package br.com.productmanagement.actions;
+package productmanagement.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import br.com.productmanagement.dao.LoginDAO;
-import br.com.productmanagement.model.Login;
 import lombok.Getter;
 import lombok.Setter;
+import productmanagement.dao.LoginDAO;
+import productmanagement.model.Login;
 
 @Getter
 @Setter

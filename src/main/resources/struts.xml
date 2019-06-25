@@ -7,7 +7,7 @@
     <constant name="struts.devMode" value="true" />
 
     <package name="test" extends="struts-default">
-        <action name="testAction" class="br.com.strutsmaven.basics.actions.TestAction">
+        <action name="testAction" class="strutsmaven.basics.actions.TestAction">
             <result name="index">/views/basics/index.jsp</result>
             <result name="success">/views/basics/success.jsp</result>
             <result name="error">/views/basics/error.jsp</result>
@@ -15,19 +15,22 @@
     </package>
     
     <package name="register" extends="struts-default">
-        <action name="registerAction" class="br.com.strutsmaven.register.actions.RegisterAction">
+        <action name="registerAction" class="strutsmaven.register.actions.RegisterAction">
             <result name="success">/views/register/welcome.jsp</result>
             <result name="input">/views/register/register.jsp</result>
         </action>
-        <action name="formLoadAction" method="initializeFormFields" class="br.com.strutsmaven.register.actions.RegisterAction">
+        <action name="formLoadAction" method="initializeFormFields" class="strutsmaven.register.actions.RegisterAction">
             <result name="input">/views/register/register.jsp</result>
         </action>
     </package>
     
     <package name="productManagementApp" namespace="/" extends="struts-default">
-    	<action name="loginAction" class="br.com.productmanagement.actions.LoginAction">
-    		<result name="success">/views/product_management/welcome.jsp</result>
+    	<action name="loginAction" class="productmanagement.actions.LoginAction">
+    		<result name="success" type="redirect">welcomeAction</result>
     		<result name="input">/views/product_management/login.jsp</result>
+    	</action>
+    	<action name="welcomeAction" class="productmanagement.actions.WelcomeAction">
+    		<result name="success">/views/product_management/welcome.jsp</result>
     	</action>
     </package>
 </struts>

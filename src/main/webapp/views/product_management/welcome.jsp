@@ -9,8 +9,38 @@
 </head>
 <body>
 
-	<h2>Welcome</h2>
+	<div align="center">
+		<h2>Welcome</h2>
+	</div>
 	<br>
 
+	<table border="1" width="750" align="center">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Category</th>
+				<th colspan="2">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<s:iterator value="products" var="product">
+				<tr>
+					<td><s:property value="#product.id"/></td>
+					<td><s:property value="#product.name"/></td>
+					<td><s:property value="#product.price"/></td>
+					<td><s:property value="#product.category"/></td>
+					<td>
+						Update
+					</td>
+					<td>
+						Delete
+					</td>
+				</tr>
+			</s:iterator>
+		</tbody>
+	
+	</table>
 </body>
 </html>

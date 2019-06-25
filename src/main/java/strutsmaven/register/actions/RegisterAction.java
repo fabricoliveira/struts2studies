@@ -1,13 +1,13 @@
-package br.com.strutsmaven.register.actions;
+package strutsmaven.register.actions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import br.com.productmanagement.model.Product;
 import lombok.Getter;
 import lombok.Setter;
+import productmanagement.model.Product;
 
 @Getter
 @Setter
@@ -49,10 +49,10 @@ public class RegisterAction extends ActionSupport {
 
 	private void initializeProducts() {
 		products = new ArrayList<>();
-		products.add(new Product(111L, "Mobile Phone", 10000));
-		products.add(new Product(222L, "Camera", 7000));
-		products.add(new Product(333L, "TV", 20000));
-		products.add(new Product(444L, "Laptop", 30000));
+		products.add(new Product(111L, "iPhone", 10000, "Mobile Phone"));
+		products.add(new Product(222L, "Panasonic", 7000, "Camera"));
+		products.add(new Product(333L, "LG", 20000, "TV"));
+		products.add(new Product(444L, "Macbook", 30000, "Laptop"));
 	}
 
 	private void initializeHobbies() {

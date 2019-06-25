@@ -1,12 +1,12 @@
-package br.com.productmanagement.dao;
+package productmanagement.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.productmanagement.model.Login;
-import br.com.productmanagement.utils.ConnectionFactory;
+import productmanagement.model.Login;
+import productmanagement.utils.ConnectionFactory;
 
 public class LoginDAO {
 	

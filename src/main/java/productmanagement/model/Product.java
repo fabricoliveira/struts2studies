@@ -1,4 +1,4 @@
-package br.com.productmanagement.model;
+package productmanagement.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,9 +11,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Login {
+public class Product {
 	
-	private String username;
-	private String password;
+	private Long id;
+	private String name;
+	private Integer price;
+	private String category;
 
 }
