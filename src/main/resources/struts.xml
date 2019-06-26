@@ -32,12 +32,22 @@
     </package>
     
     <package name="productManagementApp" namespace="/" extends="struts-default">
+    
+    	<interceptors>
+			<interceptor name="testInterceptor" class="productmanagement.interceptors.TestInterceptor" />
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="testInterceptor" />
+			</interceptor-stack>
+    	</interceptors>
+    
     	<action name="loginAction" class="productmanagement.actions.LoginAction">
     		<result name="success" type="redirect">welcomeAction</result>
     		<result name="input">views/product_management/login.jsp</result>
     	</action>
     	
     	<action name="welcomeAction" class="productmanagement.actions.WelcomeAction">
+    		<interceptor-ref name="myStack" />
     		<result name="success">views/product_management/welcome.jsp</result>
     	</action>
     	
@@ -60,7 +70,6 @@
     	<action name="backAction" class="productmanagement.actions.WelcomeAction" method="back">
     		<result name="success" type="redirect">welcomeAction</result>
     	</action>
-    	
     </package>
     
 </struts>
