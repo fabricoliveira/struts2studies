@@ -6,20 +6,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
+import lombok.NoArgsConstructor;
 import productmanagement.model.Login;
 import productmanagement.utils.ConnectionFactory;
 
 @Named
 @RequestScoped
+@NoArgsConstructor
 public class LoginDAO {
 	
+	@Inject
+	Connection connection;
+	
 	public boolean isValidUser(Login login) {
-		Connection connection = null;
 		boolean validStatus = false;
 		try {
-			connection = ConnectionFactory.getConnection();
 			PreparedStatement ps = connection.prepareStatement("SELECT * FROM login WHERE username=? and password=?");
 			ps.setString(1, login.getUsername());
 			ps.setString(2, login.getPassword());
