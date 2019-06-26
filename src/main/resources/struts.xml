@@ -37,9 +37,10 @@
     		<result name="success">views/product_management/welcome.jsp</result>
     	</action>
     	
-    	<action name="addAction" class="productmanagement.actions.AddAction">
+    	<action name="saveAction" class="productmanagement.actions.SaveAction">
     		<result name="success" type="redirect">welcomeAction</result>
     		<result name="error">views/product_management/error.jsp</result>
+    		<result name="input">views/product_management/editProduct.jsp</result>
     	</action>
     	
     	<action name="updateProductAction" class="productmanagement.actions.UpdateAction" method="loadProduct">
@@ -51,6 +52,11 @@
     		<result name="success" type="redirect">welcomeAction</result>
     		<result name="error">views/product_management/error.jsp</result>
     	</action>
+    	
+    	<action name="backAction" class="productmanagement.actions.WelcomeAction" method="back">
+    		<result name="success" type="redirect">welcomeAction</result>
+    	</action>
+    	
     </package>
     
 </struts>

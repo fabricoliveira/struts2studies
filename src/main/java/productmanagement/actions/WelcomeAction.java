@@ -28,5 +28,9 @@ public class WelcomeAction implements Action {
 		initializeProducts();
 		return SUCCESS;
 	}
-
+	
+	public String back() {
+		return SUCCESS;
+	}
+	
 }

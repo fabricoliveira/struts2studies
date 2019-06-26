@@ -21,7 +21,7 @@
 			</s:else>
 		</h2>
 		
-		<s:form action="addAction" method="post">
+		<s:form action="saveAction" method="post">
 			<s:hidden name="id" />
 			<s:textfield name="name" label="name" errorPosition="bottom" />
 			<s:textfield name="price" label="price" errorPosition="bottom" />
@@ -34,8 +34,10 @@
 				<s:submit value="Update Product" />
 			</s:else>
 			
-			<s:reset value="Reset" />
 		</s:form>
+			<a href="backAction">
+				<button>Back</button>
+			</a>
 	</div>
 	
 </body>

@@ -11,7 +11,7 @@ import productmanagement.model.Product;
 
 @Getter
 @Setter
-public class AddAction implements Action {
+public class SaveAction implements Action {
 	
 	private Long id;
 	private String name;
