@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import productmanagement.model.Product;
@@ -17,9 +18,11 @@ import productmanagement.utils.ConnectionFactory;
 @Named
 @RequestScoped
 public class ProductDAO {
+	
+	@Inject
+	private Connection connection;
 
 	public void save(Product product) {
-		Connection connection = null;
 		String sql = null;
 		boolean isUpdate = product.getId() != null ? true : false;
 		
@@ -29,7 +32,6 @@ public class ProductDAO {
 			sql = "INSERT INTO products (name, price, category) values (?, ?, ?)";
 
 		try {
-			connection = ConnectionFactory.getConnection();
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, product.getName());
 			ps.setInt(2, product.getPrice());
@@ -50,11 +52,9 @@ public class ProductDAO {
 
 	public List<Product> getAllProducts() {
 		List<Product> products = new ArrayList<>();
-		Connection connection = null;
 		String sql = "SELECT * FROM products";
 
 		try {
-			connection = ConnectionFactory.getConnection();
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 
@@ -78,11 +78,9 @@ public class ProductDAO {
 
 	public Product findById(Long id) {
 		Product product = null;
-		Connection connection = null;
 		String sql = "SELECT * FROM products WHERE id=?";
 
 		try {
-			connection = ConnectionFactory.getConnection();
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setLong(1, id);
 
@@ -107,10 +105,8 @@ public class ProductDAO {
 
 	public void delete(Long id) {
 		String sql = "DELETE FROM products WHERE id=?";
-		Connection connection = null;
 
 		try {
-			connection = ConnectionFactory.getConnection();
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setLong(1, id);
 
