@@ -6,7 +6,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import lombok.Getter;
 import lombok.Setter;
-import productmanagement.dao.LoginDAOI;
+import productmanagement.dao.LoginDAO;
 import productmanagement.model.Login;
 
 @Getter
@@ -17,7 +17,7 @@ public class LoginAction extends ActionSupport {
 	private String password;
 	
 	@Inject
-	private LoginDAOI loginDAO;
+	private LoginDAO loginDAO;
 	
 	public String execute() {
 		Login login = new Login(username, password);

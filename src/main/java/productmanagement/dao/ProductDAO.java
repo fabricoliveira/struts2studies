@@ -16,7 +16,7 @@ import productmanagement.utils.ConnectionFactory;
 
 @Named
 @RequestScoped
-public class ProductDAO implements ProductDAOI {
+public class ProductDAO {
 
 	public void save(Product product) {
 		Connection connection = null;

@@ -11,49 +11,45 @@
 
     <package name="test" extends="struts-default">
         <action name="testAction" class="strutsmaven.basics.actions.TestAction">
-            <result name="index">/views/basics/index.jsp</result>
-            <result name="success">/views/basics/success.jsp</result>
-            <result name="error">/views/basics/error.jsp</result>
+            <result name="index">views/basics/index.jsp</result>
+            <result name="success">views/basics/success.jsp</result>
+            <result name="error">views/basics/error.jsp</result>
         </action>
     </package>
     
     <package name="register" extends="struts-default">
         <action name="registerAction" class="strutsmaven.register.actions.RegisterAction">
-            <result name="success">/views/register/welcome.jsp</result>
-            <result name="input">/views/register/register.jsp</result>
+            <result name="success">views/register/welcome.jsp</result>
+            <result name="input">views/register/register.jsp</result>
         </action>
         <action name="formLoadAction" method="initializeFormFields" class="strutsmaven.register.actions.RegisterAction">
-            <result name="input">/views/register/register.jsp</result>
+            <result name="input">views/register/register.jsp</result>
         </action>
     </package>
     
     <package name="productManagementApp" namespace="/" extends="struts-default">
     	<action name="loginAction" class="productmanagement.actions.LoginAction">
     		<result name="success" type="redirect">welcomeAction</result>
-    		<result name="input">/views/product_management/login.jsp</result>
+    		<result name="input">views/product_management/login.jsp</result>
     	</action>
     	
     	<action name="welcomeAction" class="productmanagement.actions.WelcomeAction">
-    		<result name="success">/views/product_management/welcome.jsp</result>
+    		<result name="success">views/product_management/welcome.jsp</result>
     	</action>
     	
     	<action name="addAction" class="productmanagement.actions.AddAction">
     		<result name="success" type="redirect">welcomeAction</result>
-    		<result name="error">/views/product_management/error.jsp</result>
+    		<result name="error">views/product_management/error.jsp</result>
     	</action>
     	
     	<action name="updateProductAction" class="productmanagement.actions.UpdateAction" method="loadProduct">
-    		<result name="success" type="redirect">updateLoadedProductAction</result>
-    		<result name="error">/views/product_management/error.jsp</result>
-    	</action>
-    	<action name="updateLoadedProductAction" class="productmanagement.actions.UpdateAction">
-    		<result name="success" type="redirect">welcomeAction</result>
-    		<result name="error">/views/product_management/error.jsp</result>
+    		<result name="success">views/product_management/editProduct.jsp</result>
+    		<result name="error">views/product_management/error.jsp</result>
     	</action>
     	
     	<action name="deleteProductAction" class="productmanagement.actions.DeleteAction">
     		<result name="success" type="redirect">welcomeAction</result>
-    		<result name="error">/views/product_management/error.jsp</result>
+    		<result name="error">views/product_management/error.jsp</result>
     	</action>
     </package>
     

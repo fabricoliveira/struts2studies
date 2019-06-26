@@ -13,7 +13,7 @@ import productmanagement.utils.ConnectionFactory;
 
 @Named
 @RequestScoped
-public class LoginDAO implements LoginDAOI {
+public class LoginDAO {
 	
 	public boolean isValidUser(Login login) {
 		Connection connection = null;

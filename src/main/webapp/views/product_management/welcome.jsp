@@ -12,8 +12,8 @@
 	<div align="center">
 		<h2>Welcome</h2>
 		
-		<a href="views/product_management/addProduct.jsp">
-			<button>Add new Product</button>
+		<a href="views/product_management/editProduct.jsp">
+			<button>Add New Product</button>
 		</a>
 	</div>
 	<br>

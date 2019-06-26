@@ -6,7 +6,7 @@ import com.opensymphony.xwork2.Action;
 
 import lombok.Getter;
 import lombok.Setter;
-import productmanagement.dao.ProductDAOI;
+import productmanagement.dao.ProductDAO;
 
 @Getter
 @Setter
@@ -15,7 +15,7 @@ public class DeleteAction implements Action {
 	private Long id;
 	
 	@Inject
-	private ProductDAOI productDAO;
+	private ProductDAO productDAO;
 	
 	public String execute() {
 		productDAO.delete(id);
