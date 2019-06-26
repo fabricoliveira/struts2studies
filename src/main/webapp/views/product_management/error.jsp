@@ -6,11 +6,11 @@
 <head>
 <s:head/>
 <meta charset="UTF-8">
-<title>Products Management - Error</title>
+<title>Products Management - <s:text name="global.error" /></title>
 </head>
 <body>
 
-	<h1>An error occurred</h1>
+	<h1><s:text name="global.an.error.occurred" /></h1>
 	
 </body>
 </html>

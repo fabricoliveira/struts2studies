@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Products Management - Welcome</title>
+<title>Products Management - <s:text name="global.welcome" /></title>
 </head>
 <body>
 
 	<div align="center">
-		<h2>Welcome</h2>
+		<h2><s:text name="global.welcome" /></h2>
 		
 		<a href="views/product_management/editProduct.jsp">
-			<button>Add New Product</button>
+			<button><s:text name="global.add.new.product" /></button>
 		</a>
 	</div>
 	<br>
@@ -21,11 +21,11 @@
 	<table border="1" width="750" align="center">
 		<thead>
 			<tr>
-				<th>Id</th>
-				<th>Name</th>
-				<th>Price</th>
-				<th>Category</th>
-				<th colspan="2">Actions</th>
+				<th>#</th>
+				<th><s:text name="global.name" /></th>
+				<th><s:text name="global.price" /></th>
+				<th><s:text name="global.category" /></th>
+				<th colspan="2"><s:text name="global.actions" /></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,12 +37,12 @@
 					<td><s:property value="#product.category"/></td>
 					<td>
 						<a href="updateProductAction?id=<s:property value="#product.id"/>">
-							<button>Update</button>
+							<button><s:text name="global.update" /></button>
 						</a>
 					</td>
 					<td>
 						<a href="deleteProductAction?id=<s:property value="#product.id"/>">
-							<button>Delete</button>
+							<button><s:text name="global.delete" /></button>
 						</a>
 					</td>
 				</tr>

@@ -6,7 +6,7 @@
 <head>
 <s:head/>
 <meta charset="UTF-8">
-<title>Products Management - Product</title>
+<title>Products Management - <s:text name="global.product" /></title>
 </head>
 <body>
 
@@ -14,29 +14,29 @@
 	
 		<h2>
 			<s:if test="%{id == null}">
-				Add New Product
+				<s:text name="global.add.new.product" />
 			</s:if>
 			<s:else>
-				Update Product
+				<s:text name="global.update.product" />
 			</s:else>
 		</h2>
 		
 		<s:form action="saveAction" method="post">
 			<s:hidden name="id" />
-			<s:textfield name="name" label="name" errorPosition="bottom" />
-			<s:textfield name="price" label="price" errorPosition="bottom" />
-			<s:textfield name="category" label="category" errorPosition="bottom" />
+			<s:textfield name="name" key="global.name" errorPosition="bottom" />
+			<s:textfield name="price" key="global.price" errorPosition="bottom" />
+			<s:textfield name="category" key="global.category" errorPosition="bottom" />
 			
 			<s:if test="%{id == null}">
-				<s:submit value="Add New Product" />
+				<s:submit key="global.add.new.product" />
 			</s:if>
 			<s:else>
-				<s:submit value="Update Product" />
+				<s:submit key="global.update.product" />
 			</s:else>
 			
 		</s:form>
 			<a href="backAction">
-				<button>Back</button>
+				<button><s:text name="global.back" /></button>
 			</a>
 	</div>
 	

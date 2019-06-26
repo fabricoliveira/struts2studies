@@ -8,6 +8,10 @@
     
     <!-- 	Responsável por remover o sufixo .action das url do sistema -->
 	<constant name="struts.action.extension" value="," />
+	
+    <!-- 	Responsável por habilitar a internacionalizacao e localizacao -->
+	<constant name="struts.custom.i18n.resources" value="global" />
+	
 
     <package name="test" extends="struts-default">
         <action name="testAction" class="strutsmaven.basics.actions.TestAction">
