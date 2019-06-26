@@ -9,11 +9,13 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import lombok.NoArgsConstructor;
 import productmanagement.model.Login;
 import productmanagement.utils.ConnectionFactory;
 
 @Named
 @RequestScoped
+@NoArgsConstructor
 public class LoginDAO {
 	
 	@Inject
